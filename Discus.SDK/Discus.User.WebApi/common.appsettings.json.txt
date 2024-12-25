@@ -1,0 +1,58 @@
+﻿{
+  "AllowedHosts": "*",
+  "CorsHosts": "http://localhost:6002",
+  "ThreadPoolSettings": {
+    "MinThreads": 8,
+    "MinCompletionPortThreads": 8,
+    "MaxThreads": 32767,
+    "MaxCompletionPortThreads": 1000
+  },
+  "Mysql": {
+    "MasterConnectionString": "Server=192.168.32.129;Port=3306;database=discus;uid=root;pwd=discus_mysql;connection timeout=30000;",
+    "SlaveConnectionStrings": ["Server=192.168.32.129;Port=3307;database=discus;uid=root;pwd=discus_mysql;connection timeout=30000;"]
+  },
+  "Redis": {
+    "Dbconfig": {
+      "ConnectionString": "192.168.32.129:6379,defaultDatabase=0,password=discus_redis,ssl=false,sslHost=null,connectTimeout=4000,allowAdmin=true"
+    }
+  },
+  "RabbitMq": {
+    "HostName": "192.168.32.129",
+    "UserName": "discus",
+    "Password": "discus_rabbitmq",
+    "Port": "5672",
+    "VirtualHost": "/"
+  },
+  "Minio": {
+    "Endpoint": "192.168.32.129:19000",
+    "AccessKey": "discus",
+    "SecretKey": "discus_minio",
+    "Secure": "false",
+    "BucketName": "discus"
+  },
+  "JWT": {
+    "ValidateIssuer": true,
+    "ValidIssuer": "discus",
+    "ValidateIssuerSigningKey": true,
+    "SymmetricSecurityKey": "3f8e2a7b-9c6d-4e8f-a1b2-5d6e7f8g9h0i",
+    "ValidateAudience": true,
+    "ValidAudience": "manager",
+    "ValidateLifetime": true,
+    "RequireExpirationTime": true,
+    "ClockSkew": 7200,
+    "RefreshTokenAudience": "manager",
+    "Expire": 7200,
+    "RefreshTokenExpire": 7200
+  },
+  "LogConfig": {
+    "ConnectionString": "Server=192.168.32.129;Port=3306;database=discus_log;uid=root;pwd=discus_mysql;connection timeout=30000;"
+  },
+  "LogStash": {
+    "LogstashUri": "http://192.168.32.143:5000"
+  },
+  "ElasticSearch": {
+    "Url": "http://192.168.32.143:9200",
+    "UserName": "",
+    "Password": ""
+  }
+}

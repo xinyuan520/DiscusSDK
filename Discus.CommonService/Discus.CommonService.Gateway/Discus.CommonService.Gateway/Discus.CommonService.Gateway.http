@@ -1,0 +1,6 @@
+@Discus.CommonService.Gateway_HostAddress = http://localhost:5046
+
+GET {{Discus.CommonService.Gateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

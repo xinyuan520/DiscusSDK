@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Discus.DistributeCalculate</name>
+    </assembly>
+    <members>
+        <member name="M:Discus.DistributeCalculate.Controllers.ShowController.Show">
+            <summary>
+            show
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
