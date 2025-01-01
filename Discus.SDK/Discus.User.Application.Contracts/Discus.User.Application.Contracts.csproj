@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Refit" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Discus.SDK.Tools\Discus.SDK.Tools.csproj" />
     <ProjectReference Include="..\Discus.Shared.Application.Contracts\Discus.Shared.Application.Contracts.csproj" />
     <ProjectReference Include="..\Discus.User.Repository\Discus.User.Repository.csproj" />

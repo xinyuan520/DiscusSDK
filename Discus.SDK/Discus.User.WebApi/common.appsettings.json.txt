@@ -1,6 +1,15 @@
 ﻿{
   "AllowedHosts": "*",
-  "CorsHosts": "http://localhost:6002",
+  "Serilog": {
+  "Using": [ "Serilog.Sinks.Console", "Serilog.Sinks.MySQL", "Serilog.Sinks.LogstashHttp" ],
+  "MinimumLevel": {
+      "Default": "Debug",
+      "Override": {
+        "Microsoft": "Information",
+        "Microsoft.AspNetCore": "Information"
+      }
+    }
+  },
   "ThreadPoolSettings": {
     "MinThreads": 8,
     "MinCompletionPortThreads": 8,
@@ -12,9 +21,8 @@
     "SlaveConnectionStrings": ["Server=192.168.32.129;Port=3307;database=discus;uid=root;pwd=discus_mysql;connection timeout=30000;"]
   },
   "Redis": {
-    "Dbconfig": {
-      "ConnectionString": "192.168.32.129:6379,defaultDatabase=0,password=discus_redis,ssl=false,sslHost=null,connectTimeout=4000,allowAdmin=true"
-    }
+    "MasterConnectionString":"192.168.32.129:6379,defaultDatabase=0,password=discus_redis,ssl=false,sslHost=null,connectTimeout=4000,allowAdmin=true",
+    "SlaveConnectionString":"192.168.32.129:6380,defaultDatabase=0,password=discus_redis,ssl=false,sslHost=null,connectTimeout=4000,allowAdmin=true"
   },
   "RabbitMq": {
     "HostName": "192.168.32.129",
@@ -24,7 +32,7 @@
     "VirtualHost": "/"
   },
   "Minio": {
-    "Endpoint": "192.168.32.129:19000",
+    "Endpoint": "192.168.32.129:9000",
     "AccessKey": "discus",
     "SecretKey": "discus_minio",
     "Secure": "false",

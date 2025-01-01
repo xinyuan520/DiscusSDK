@@ -7,385 +7,397 @@ namespace Discus.SDK.Redis
     public class RedisClient : IRedisClient
     {
         private readonly IOptions<RedisConfiguration> _options;
-
         private readonly ILogger<RedisClient> _logger;
 
         public RedisClient(IOptions<RedisConfiguration> options, ILogger<RedisClient> logger)
         {
             _options = options;
             _logger = logger;
-            var csredis = new CSRedisClient(_options.Value.Dbconfig.ConnectionString);
-            RedisHelper.Initialization(csredis);
-            logger.LogInformation("redis Initialization");
+            InitializeRedis(_options);
+        }
+
+        private static string InitializeRedis(IOptions<RedisConfiguration> options)
+        {
+            if (!string.IsNullOrEmpty(options.Value.SlaveConnectionString))
+            {
+                RedisHelperCluster.Initialize(options.Value.MasterConnectionString, options.Value.SlaveConnectionString);
+                return options.Value.SlaveConnectionString;
+            }
+            if (options.Value.SlaveConnectionStrings != null && options.Value.SlaveConnectionStrings.Length > 0)
+            {
+                RedisHelperCluster.Initialize(options.Value.MasterConnectionString, options.Value.SlaveConnectionStrings);
+                return options.Value.SlaveConnectionStrings[0];
+            }
+            throw new InvalidOperationException("redis 配置异常");
         }
 
         #region Keys
         public long KeyDel(string cacheKey)
         {
-            return RedisHelper.Del(cacheKey);
+            return RedisHelperCluster.Master.Del(cacheKey);
         }
 
         public async Task<long> KeyDelAsync(string cacheKey)
         {
-            return await RedisHelper.DelAsync(cacheKey);
+            return await RedisHelperCluster.Master.DelAsync(cacheKey);
         }
 
         public bool KeyExists(string cacheKey)
         {
-            return RedisHelper.Exists(cacheKey);
+            return RedisHelperCluster.Slave.Exists(cacheKey);
         }
 
         public async Task<bool> KeyExistsAsync(string cacheKey)
         {
-            return await RedisHelper.ExistsAsync(cacheKey);
+            return await RedisHelperCluster.Slave.ExistsAsync(cacheKey);
         }
 
         public bool KeyExpire(string cacheKey, int second)
         {
-            return RedisHelper.Expire(cacheKey, second);
+            return RedisHelperCluster.Slave.Expire(cacheKey, second);
         }
 
         public async Task<bool> KeyExpireAsync(string cacheKey, int second)
         {
-            return await RedisHelper.ExpireAsync(cacheKey, second);
+            return await RedisHelperCluster.Slave.ExpireAsync(cacheKey, second);
         }
 
         public long TTL(string cacheKey)
         {
-            return RedisHelper.Ttl(cacheKey);
+            return RedisHelperCluster.Slave.Ttl(cacheKey);
         }
 
         public async Task<long> TTLAsync(string cacheKey)
         {
-            return await RedisHelper.TtlAsync(cacheKey);
+            return await RedisHelperCluster.Slave.TtlAsync(cacheKey);
         }
         #endregion
 
         #region String
         public long IncrBy(string cacheKey, long value = 1)
         {
-            return RedisHelper.IncrBy(cacheKey, value);
+            return RedisHelperCluster.Master.IncrBy(cacheKey, value);
         }
 
         public async Task<long> IncrByAsync(string cacheKey, long value = 1)
         {
-            return await RedisHelper.IncrByAsync(cacheKey, value);
+            return await RedisHelperCluster.Master.IncrByAsync(cacheKey, value);
         }
 
         public decimal IncrByFloat(string cacheKey, decimal value = 1)
         {
-            return RedisHelper.IncrByFloat(cacheKey, value);
+            return RedisHelperCluster.Master.IncrByFloat(cacheKey, value);
         }
 
         public async Task<decimal> IncrByFloatAsync(string cacheKey, decimal value = 1)
         {
-            return await RedisHelper.IncrByFloatAsync(cacheKey, value);
+            return await RedisHelperCluster.Master.IncrByFloatAsync(cacheKey, value);
         }
 
         public bool StringSet(string cacheKey, object cacheValue, int expireSeconds = -1, RedisExistence? exists = null)
         {
-            return RedisHelper.Set(cacheKey, cacheValue, expireSeconds, exists);
+            return RedisHelperCluster.Master.Set(cacheKey, cacheValue, expireSeconds, exists);
         }
 
         public async Task<bool> StringSetAsync(string cacheKey, object cacheValue, int expireSeconds = -1, RedisExistence? exists = null)
         {
-            return await RedisHelper.SetAsync(cacheKey, cacheValue, expireSeconds, exists);
+            return await RedisHelperCluster.Master.SetAsync(cacheKey, cacheValue, expireSeconds, exists);
         }
 
         public string StringGet(string cacheKey)
         {
-            return RedisHelper.Get(cacheKey);
+            return RedisHelperCluster.Slave.Get(cacheKey);
 
         }
 
         public async Task<string> StringGetAsync(string cacheKey)
         {
-            return await RedisHelper.GetAsync(cacheKey);
+            return await RedisHelperCluster.Slave.GetAsync(cacheKey);
         }
 
         public long StringLen(string cacheKey)
         {
-            return RedisHelper.StrLen(cacheKey);
+            return RedisHelperCluster.Slave.StrLen(cacheKey);
         }
 
         public async Task<long> StringLenAsync(string cacheKey)
         {
-            return await RedisHelper.StrLenAsync(cacheKey);
+            return await RedisHelperCluster.Slave.StrLenAsync(cacheKey);
         }
 
         public long StringSetRange(string cacheKey, uint offest, string value)
         {
-            return RedisHelper.SetRange(cacheKey, offest, value);
+            return RedisHelperCluster.Master.SetRange(cacheKey, offest, value);
         }
 
         public async Task<long> StringSetRangeAsync(string cacheKey, uint offest, string value)
         {
-            return await RedisHelper.SetRangeAsync(cacheKey, offest, value);
+            return await RedisHelperCluster.Master.SetRangeAsync(cacheKey, offest, value);
         }
 
         public string StringGetRange(string cacheKey, long start, long end)
         {
-            return RedisHelper.GetRange(cacheKey, start, end);
+            return RedisHelperCluster.Slave.GetRange(cacheKey, start, end);
         }
 
         public async Task<string> StringGetRangeAsync(string cacheKey, long start, long end)
         {
-            return await RedisHelper.GetRangeAsync(cacheKey, start, end);
+            return await RedisHelperCluster.Slave.GetRangeAsync(cacheKey, start, end);
         }
         #endregion
 
         #region Hashes
         public bool HMSet(string cacheKey, Dictionary<string, string> vals, TimeSpan? expiration = null)
         {
-            return RedisHelper.HMSet(cacheKey, vals, expiration);
+            return RedisHelperCluster.Master.HMSet(cacheKey, vals, expiration);
         }
 
         public bool HSet(string cacheKey, string field, string cacheValue)
         {
-            return RedisHelper.HSet(cacheKey, field, cacheValue);
+            return RedisHelperCluster.Master.HSet(cacheKey, field, cacheValue);
         }
 
         public bool HExists(string cacheKey, string field)
         {
-            return RedisHelper.HExists(cacheKey, field);
+            return RedisHelperCluster.Master.HExists(cacheKey, field);
         }
 
         public long HDel(string cacheKey, string[] fields = null)
         {
-            return RedisHelper.HDel(cacheKey, fields);
+            return RedisHelperCluster.Master.HDel(cacheKey, fields);
 
         }
 
         public string HGet(string cacheKey, string field)
         {
-            return RedisHelper.HGet(cacheKey, field);
+            return RedisHelperCluster.Master.HGet(cacheKey, field);
         }
 
         public Dictionary<string, string> HGetAll(string cacheKey)
         {
-            return RedisHelper.HGetAll(cacheKey);
+            return RedisHelperCluster.Master.HGetAll(cacheKey);
         }
 
         public long HIncrBy(string cacheKey, string field, long val = 1)
         {
-            return RedisHelper.HIncrBy(cacheKey, field, val);
+            return RedisHelperCluster.Master.HIncrBy(cacheKey, field, val);
         }
 
         public string[] HKeys(string cacheKey)
         {
-            return RedisHelper.HKeys(cacheKey);
+            return RedisHelperCluster.Master.HKeys(cacheKey);
         }
 
         public long HLen(string cacheKey)
         {
-            return RedisHelper.HLen(cacheKey);
+            return RedisHelperCluster.Master.HLen(cacheKey);
         }
 
         public string[] HVals(string cacheKey)
         {
-            return RedisHelper.HVals(cacheKey);
+            return RedisHelperCluster.Master.HVals(cacheKey);
         }
 
         public string[] HMGet(string cacheKey, string[] fields)
         {
-            return RedisHelper.HMGet(cacheKey, fields);
+            return RedisHelperCluster.Master.HMGet(cacheKey, fields);
         }
 
         public async Task<bool> HMSetAsync(string cacheKey, object[] keyValues)
         {
-            return await RedisHelper.HMSetAsync(cacheKey, keyValues);
+            return await RedisHelperCluster.Master.HMSetAsync(cacheKey, keyValues);
         }
 
         public async Task<bool> HSetAsync(string cacheKey, string field, string cacheValue)
         {
-            return await RedisHelper.HSetAsync(cacheKey, field, cacheValue);
+            return await RedisHelperCluster.Master.HSetAsync(cacheKey, field, cacheValue);
         }
 
         public Task<bool> HExistsAsync(string cacheKey, string field)
         {
-            return RedisHelper.HExistsAsync(cacheKey, field);
+            return RedisHelperCluster.Master.HExistsAsync(cacheKey, field);
         }
 
         public async Task<long> HDelAsync(string cacheKey, string[] fields)
         {
-            return await RedisHelper.HDelAsync(cacheKey, fields);
+            return await RedisHelperCluster.Master.HDelAsync(cacheKey, fields);
         }
 
         public async Task<string> HGetAsync(string cacheKey, string field)
         {
-            return await RedisHelper.HGetAsync(cacheKey, field);
+            return await RedisHelperCluster.Master.HGetAsync(cacheKey, field);
         }
 
         public async Task<Dictionary<string, string>> HGetAllAsync(string cacheKey)
         {
-            return await RedisHelper.HGetAllAsync(cacheKey);
+            return await RedisHelperCluster.Master.HGetAllAsync(cacheKey);
         }
 
         public async Task<long> HIncrByAsync(string cacheKey, string field, long val = 1)
         {
-            return await RedisHelper.HIncrByAsync(cacheKey, field, val);
+            return await RedisHelperCluster.Master.HIncrByAsync(cacheKey, field, val);
         }
 
         public async Task<string[]> HKeysAsync(string cacheKey)
         {
-            return await RedisHelper.HKeysAsync(cacheKey);
+            return await RedisHelperCluster.Master.HKeysAsync(cacheKey);
         }
 
         public async Task<long> HLenAsync(string cacheKey)
         {
-            return await RedisHelper.HLenAsync(cacheKey);
+            return await RedisHelperCluster.Master.HLenAsync(cacheKey);
         }
 
         public async Task<string[]> HValsAsync(string cacheKey)
         {
-            return await RedisHelper.HValsAsync(cacheKey);
+            return await RedisHelperCluster.Master.HValsAsync(cacheKey);
         }
 
         public async Task<string[]> HMGetAsync(string cacheKey, string[] fields)
         {
-            return await RedisHelper.HMGetAsync(cacheKey, fields);
+            return await RedisHelperCluster.Master.HMGetAsync(cacheKey, fields);
         }
         #endregion
 
         #region List
         public T LIndex<T>(string cacheKey, long index)
         {
-            return RedisHelper.LIndex<T>(cacheKey, index);
+            return RedisHelperCluster.Master.LIndex<T>(cacheKey, index);
         }
 
         public long LLen(string cacheKey)
         {
-            return RedisHelper.LLen(cacheKey);
+            return RedisHelperCluster.Master.LLen(cacheKey);
         }
 
         public T LPop<T>(string cacheKey)
         {
-            return RedisHelper.LPop<T>(cacheKey);
+            return RedisHelperCluster.Master.LPop<T>(cacheKey);
         }
 
         public long LPush<T>(string cacheKey, T[] cacheValues)
         {
-            return RedisHelper.LPush<T>(cacheKey, cacheValues);
+            return RedisHelperCluster.Master.LPush<T>(cacheKey, cacheValues);
         }
 
         public T[] LRange<T>(string cacheKey, long start, long stop)
         {
-            return RedisHelper.LRange<T>(cacheKey, start, stop);
+            return RedisHelperCluster.Master.LRange<T>(cacheKey, start, stop);
         }
 
         public long LRem(string cacheKey, long count, object cacheValue)
         {
-            return RedisHelper.LRem(cacheKey, count, cacheValue);
+            return RedisHelperCluster.Master.LRem(cacheKey, count, cacheValue);
         }
 
         public bool LSet(string cacheKey, long index, object cacheValue)
         {
-            return RedisHelper.LSet(cacheKey, index, cacheValue);
+            return RedisHelperCluster.Master.LSet(cacheKey, index, cacheValue);
         }
 
         public bool LTrim(string cacheKey, long start, long stop)
         {
-            return RedisHelper.LTrim(cacheKey, start, stop);
+            return RedisHelperCluster.Master.LTrim(cacheKey, start, stop);
         }
 
         public long LPushX(string cacheKey, object cacheValue)
         {
-            return RedisHelper.LPushX(cacheKey, cacheValue);
+            return RedisHelperCluster.Master.LPushX(cacheKey, cacheValue);
         }
 
         public long LInsertBefore(string cacheKey, object pivot, object cacheValue)
         {
-            return RedisHelper.LInsertBefore(cacheKey, pivot, cacheValue);
+            return RedisHelperCluster.Master.LInsertBefore(cacheKey, pivot, cacheValue);
         }
 
         public long LInsertAfter(string cacheKey, object pivot, object cacheValue)
         {
-            return RedisHelper.LInsertAfter(cacheKey, pivot, cacheValue);
+            return RedisHelperCluster.Master.LInsertAfter(cacheKey, pivot, cacheValue);
         }
 
         public long RPushX(string cacheKey, object cacheValue)
         {
-            return RedisHelper.RPushX(cacheKey, cacheValue);
+            return RedisHelperCluster.Master.RPushX(cacheKey, cacheValue);
         }
 
         public long RPush<T>(string cacheKey, T[] cacheValues)
         {
-            return RedisHelper.RPush<T>(cacheKey, cacheValues);
+            return RedisHelperCluster.Master.RPush<T>(cacheKey, cacheValues);
         }
 
         public T RPop<T>(string cacheKey)
         {
-            return RedisHelper.RPop<T>(cacheKey);
+            return RedisHelperCluster.Master.RPop<T>(cacheKey);
         }
 
         public async Task<T> LIndexAsync<T>(string cacheKey, long index)
         {
-            return await RedisHelper.LIndexAsync<T>(cacheKey, index);
+            return await RedisHelperCluster.Master.LIndexAsync<T>(cacheKey, index);
         }
 
         public async Task<long> LLenAsync(string cacheKey)
         {
-            return await RedisHelper.LLenAsync(cacheKey);
+            return await RedisHelperCluster.Master.LLenAsync(cacheKey);
         }
 
         public async Task<T> LPopAsync<T>(string cacheKey)
         {
-            return await RedisHelper.LPopAsync<T>(cacheKey);
+            return await RedisHelperCluster.Master.LPopAsync<T>(cacheKey);
         }
 
         public async Task<long> LPushAsync<T>(string cacheKey, T[] cacheValues)
         {
-            return await RedisHelper.LPushAsync<T>(cacheKey, cacheValues);
+            return await RedisHelperCluster.Master.LPushAsync<T>(cacheKey, cacheValues);
         }
 
         public async Task<T[]> LRangeAsync<T>(string cacheKey, long start, long stop)
         {
-            return await RedisHelper.LRangeAsync<T>(cacheKey, start, stop);
+            return await RedisHelperCluster.Master.LRangeAsync<T>(cacheKey, start, stop);
         }
 
         public async Task<long> LRemAsync(string cacheKey, long count, object cacheValue)
         {
-            return await RedisHelper.LRemAsync(cacheKey, count, cacheValue);
+            return await RedisHelperCluster.Master.LRemAsync(cacheKey, count, cacheValue);
         }
 
         public async Task<bool> LSetAsync(string cacheKey, long index, object cacheValue)
         {
-            return await RedisHelper.LSetAsync(cacheKey, index, cacheValue);
+            return await RedisHelperCluster.Master.LSetAsync(cacheKey, index, cacheValue);
         }
 
         public async Task<bool> LTrimAsync(string cacheKey, long start, long stop)
         {
-            return await RedisHelper.LTrimAsync(cacheKey, start, stop);
+            return await RedisHelperCluster.Master.LTrimAsync(cacheKey, start, stop);
         }
 
         public async Task<long> LPushXAsync(string cacheKey, object cacheValue)
         {
-            return await RedisHelper.LPushXAsync(cacheKey, cacheValue);
+            return await RedisHelperCluster.Master.LPushXAsync(cacheKey, cacheValue);
         }
 
         public async Task<long> LInsertBeforeAsync(string cacheKey, object pivot, object cacheValue)
         {
-            return await RedisHelper.LInsertBeforeAsync(cacheKey, pivot, cacheValue);
+            return await RedisHelperCluster.Master.LInsertBeforeAsync(cacheKey, pivot, cacheValue);
         }
 
         public async Task<long> LInsertAfterAsync(string cacheKey, object pivot, object cacheValue)
         {
-            return await RedisHelper.LInsertAfterAsync(cacheKey, pivot, cacheValue);
+            return await RedisHelperCluster.Master.LInsertAfterAsync(cacheKey, pivot, cacheValue);
         }
 
         public async Task<long> RPushXAsync(string cacheKey, object cacheValue)
         {
-            return await RedisHelper.RPushXAsync(cacheKey, cacheValue);
+            return await RedisHelperCluster.Master.RPushXAsync(cacheKey, cacheValue);
         }
 
         public async Task<long> RPushAsync<T>(string cacheKey, T[] cacheValues)
         {
-            return await RedisHelper.RPushAsync<T>(cacheKey, cacheValues);
+            return await RedisHelperCluster.Master.RPushAsync<T>(cacheKey, cacheValues);
         }
 
         public async Task<T> RPopAsync<T>(string cacheKey)
         {
-            return await RedisHelper.RPopAsync<T>(cacheKey);
+            return await RedisHelperCluster.Master.RPopAsync<T>(cacheKey);
         }
         #endregion
 
@@ -393,171 +405,171 @@ namespace Discus.SDK.Redis
 
         public long SAdd<T>(string cacheKey, T[] cacheValues)
         {
-            return RedisHelper.SAdd<T>(cacheKey, cacheValues);
+            return RedisHelperCluster.Master.SAdd<T>(cacheKey, cacheValues);
         }
 
         public long SCard(string cacheKey)
         {
-            return RedisHelper.SCard(cacheKey);
+            return RedisHelperCluster.Master.SCard(cacheKey);
         }
 
         public bool SIsMember(string cacheKey, object cacheValue)
         {
-            return RedisHelper.SIsMember(cacheKey, cacheValue);
+            return RedisHelperCluster.Master.SIsMember(cacheKey, cacheValue);
         }
 
         public string[] SMembers(string cacheKey)
         {
-            return RedisHelper.SMembers(cacheKey);
+            return RedisHelperCluster.Master.SMembers(cacheKey);
         }
 
         public T SPop<T>(string cacheKey)
         {
-            return RedisHelper.SPop<T>(cacheKey);
+            return RedisHelperCluster.Master.SPop<T>(cacheKey);
         }
 
         public T SRandMember<T>(string cacheKey)
         {
-            return RedisHelper.SRandMember<T>(cacheKey);
+            return RedisHelperCluster.Master.SRandMember<T>(cacheKey);
         }
 
         public long SRem<T>(string cacheKey, T[] cacheValues)
         {
-            return RedisHelper.SRem<T>(cacheKey, cacheValues);
+            return RedisHelperCluster.Master.SRem<T>(cacheKey, cacheValues);
         }
 
-        public async Task<long> SAddAsync<T>(string cacheKey,T[] cacheValues)
+        public async Task<long> SAddAsync<T>(string cacheKey, T[] cacheValues)
         {
-            return await RedisHelper.SAddAsync<T>(cacheKey, cacheValues);
+            return await RedisHelperCluster.Master.SAddAsync<T>(cacheKey, cacheValues);
         }
 
         public async Task<long> SCardAsync(string cacheKey)
         {
-            return await RedisHelper.SCardAsync(cacheKey);
+            return await RedisHelperCluster.Master.SCardAsync(cacheKey);
         }
 
         public async Task<bool> SIsMemberAsync(string cacheKey, object cacheValue)
         {
-            return await RedisHelper.SIsMemberAsync(cacheKey, cacheValue);
+            return await RedisHelperCluster.Master.SIsMemberAsync(cacheKey, cacheValue);
         }
 
         public async Task<string[]> SMembersAsync(string cacheKey)
         {
-            return await RedisHelper.SMembersAsync(cacheKey);
+            return await RedisHelperCluster.Master.SMembersAsync(cacheKey);
         }
 
         public async Task<T> SPopAsync<T>(string cacheKey)
         {
-            return await RedisHelper.SPopAsync<T>(cacheKey);
+            return await RedisHelperCluster.Master.SPopAsync<T>(cacheKey);
         }
 
         public async Task<T> SRandMemberAsync<T>(string cacheKey)
         {
-            return await RedisHelper.SRandMemberAsync<T>(cacheKey);
+            return await RedisHelperCluster.Master.SRandMemberAsync<T>(cacheKey);
         }
 
         public async Task<long> SRemAsync<T>(string cacheKey, T[] cacheValues)
         {
-            return await RedisHelper.SRemAsync<T>(cacheKey, cacheValues);
+            return await RedisHelperCluster.Master.SRemAsync<T>(cacheKey, cacheValues);
         }
         #endregion
 
         #region Sorted Set
         public long ZAdd(string cacheKey, (decimal, object)[] cacheValues)
         {
-            return RedisHelper.ZAdd(cacheKey, cacheValues);  
+            return RedisHelperCluster.Master.ZAdd(cacheKey, cacheValues);
         }
 
         public long ZCard(string cacheKey)
         {
-            return RedisHelper.ZCard(cacheKey);
+            return RedisHelperCluster.Slave.ZCard(cacheKey);
         }
 
         public long ZCount(string cacheKey, decimal min, decimal max)
         {
-            return RedisHelper.ZCount(cacheKey, min, max);
+            return RedisHelperCluster.Slave.ZCount(cacheKey, min, max);
         }
 
         public decimal ZIncrBy(string cacheKey, string field, decimal increment = 1m)
         {
-            return RedisHelper.ZIncrBy(cacheKey, field, increment);
+            return RedisHelperCluster.Master.ZIncrBy(cacheKey, field, increment);
         }
 
         public long ZLexCount(string cacheKey, string min, string max)
         {
-            return RedisHelper.ZLexCount(cacheKey, min, max);
+            return RedisHelperCluster.Slave.ZLexCount(cacheKey, min, max);
         }
 
         public T[] ZRange<T>(string cacheKey, long start, long stop)
         {
-            return RedisHelper.ZRange<T>(cacheKey, start, stop);
+            return RedisHelperCluster.Slave.ZRange<T>(cacheKey, start, stop);
         }
 
         public long? ZRank(string cacheKey, object cacheValue)
         {
-            return RedisHelper.ZRank(cacheKey, cacheValue);
+            return RedisHelperCluster.Master.ZRank(cacheKey, cacheValue);
         }
 
         public long ZRem<T>(string cacheKey, T[] cacheValues)
         {
-            return RedisHelper.ZRem(cacheKey, cacheValues);
+            return RedisHelperCluster.Master.ZRem(cacheKey, cacheValues);
         }
 
         public decimal? ZScore(string cacheKey, object cacheValue)
         {
-            return RedisHelper.ZScore(cacheKey, cacheValue);
+            return RedisHelperCluster.Master.ZScore(cacheKey, cacheValue);
         }
 
         public async Task<long> ZAddAsync(string cacheKey, params (decimal, object)[] cacheValues)
         {
-            return await RedisHelper.ZAddAsync(cacheKey, cacheValues);
+            return await RedisHelperCluster.Master.ZAddAsync(cacheKey, cacheValues);
         }
 
         public async Task<long> ZCardAsync(string cacheKey)
         {
-            return await RedisHelper.ZCardAsync(cacheKey);
+            return await RedisHelperCluster.Master.ZCardAsync(cacheKey);
         }
 
         public async Task<long> ZCountAsync(string cacheKey, decimal min, decimal max)
         {
-            return await RedisHelper.ZCountAsync(cacheKey, min, max);
+            return await RedisHelperCluster.Master.ZCountAsync(cacheKey, min, max);
         }
 
         public async Task<decimal> ZIncrByAsync(string cacheKey, string field, decimal val = 1m)
         {
-            return await RedisHelper.ZIncrByAsync(cacheKey, field, val);
+            return await RedisHelperCluster.Master.ZIncrByAsync(cacheKey, field, val);
         }
 
         public async Task<long> ZLexCountAsync(string cacheKey, string min, string max)
         {
-            return await RedisHelper.ZLexCountAsync(cacheKey, min, max);
+            return await RedisHelperCluster.Master.ZLexCountAsync(cacheKey, min, max);
         }
 
         public async Task<T[]> ZRangeAsync<T>(string cacheKey, long start, long stop)
         {
-            return await RedisHelper.ZRangeAsync<T>(cacheKey, start, stop);
+            return await RedisHelperCluster.Master.ZRangeAsync<T>(cacheKey, start, stop);
         }
 
         public async Task<long?> ZRankAsync(string cacheKey, object cacheValue)
         {
-            return await RedisHelper.ZRankAsync(cacheKey, cacheValue);
+            return await RedisHelperCluster.Master.ZRankAsync(cacheKey, cacheValue);
         }
 
         public async Task<long> ZRemAsync<T>(string cacheKey, T[] cacheValues)
         {
-            return await RedisHelper.ZRemAsync<T>(cacheKey, cacheValues);
+            return await RedisHelperCluster.Master.ZRemAsync<T>(cacheKey, cacheValues);
         }
 
         public async Task<decimal?> ZScoreAsync<T>(string cacheKey, object cacheValue)
         {
-            return await RedisHelper.ZScoreAsync(cacheKey, cacheValue);
+            return await RedisHelperCluster.Master.ZScoreAsync(cacheKey, cacheValue);
 
         }
         #endregion
 
         public async Task<dynamic> EvalAsync(string script, string keys, object[] args)
         {
-            return await RedisHelper.EvalAsync(script, keys, args);
+            return await RedisHelperCluster.Master.EvalAsync(script, keys, args);
         }
 
     }

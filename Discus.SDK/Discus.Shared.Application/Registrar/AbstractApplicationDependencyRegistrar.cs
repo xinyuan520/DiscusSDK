@@ -1,7 +1,7 @@
 ﻿using Discus.SDK.Core.Configuration;
 using Discus.SDK.Es.Extensions;
 using Discus.SDK.Nacos.Extensions;
-
+using SkyApm.Utilities.DependencyInjection;
 
 namespace Discus.Shared.Application.Registrar
 {
@@ -72,6 +72,7 @@ namespace Discus.Shared.Application.Registrar
             Services.AddServiceMinio(MinioSection);
             Services.AddServiceNacos(NacosSection, Configuration);
             Services.AddServiceEs(ElasticSearchSection);
+            Services.AddSkyApmExtensions();
         }
         #endregion
 

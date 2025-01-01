@@ -14,34 +14,34 @@ namespace Discus.SDK.Tools.HttpResult
         /// <summary>
         /// 处理码
         /// </summary>
-        public ApiResultCode Code { get; protected set; }
+        public ApiResultCode Code { get; set; }
 
         /// <summary>
         /// 响应信息
         /// </summary>
-        public string Message { get; protected set; }
+        public string Message { get; set; }
 
         /// <summary>
         /// 数据
         /// </summary>
-        public object Data { get; protected set; }
+        public object Data { get; set; }
 
         #endregion
 
         /// <summary>
         /// 是否请求成功
         /// </summary>
-        public bool Success { get; protected set; }
+        public bool Success { get; set; }
 
         /// <summary>
         /// 是否请求失败
         /// </summary>
-        public bool Failed { get; protected set; }
+        public bool Failed { get; set; }
 
         /// <summary>
         /// 是否请求异常
         /// </summary>
-        public bool Error { get; protected set; }
+        public bool Error { get; set; }
 
         /// <summary>
         /// 响应成功
@@ -127,7 +127,7 @@ namespace Discus.SDK.Tools.HttpResult
         /// <summary>
         /// 数据
         /// </summary>
-        public new T Data { get; protected set; }
+        public new T Data { get; set; }
 
         /// <summary>
         /// 响应成功

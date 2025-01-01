@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Discus.Shared.ServerClient\Discus.Shared.ServerClient.csproj" />
-    <ProjectReference Include="..\Discus.User.WebApi\Discus.User.csproj" />
+    <ProjectReference Include="..\Discus.SDK.Tools\Discus.SDK.Tools.csproj" />
+    <ProjectReference Include="..\Discus.User.Application.Contracts\Discus.User.Application.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

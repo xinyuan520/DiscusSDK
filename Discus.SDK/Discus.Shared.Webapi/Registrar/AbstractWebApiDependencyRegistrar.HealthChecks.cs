@@ -25,7 +25,7 @@ namespace Discus.Shared.Webapi.Registrar
                 var redisConfig = Configuration.GetSection(NodeConsts.Redis).Get<RedisConfiguration>();
                 if (redisConfig is null)
                     throw new NullReferenceException("redisConfig is null");
-                checksBuilder.AddRedis(redisConfig.Dbconfig.ConnectionString);
+                checksBuilder.AddRedis(redisConfig.MasterConnectionString);
             }
 
             return checksBuilder;

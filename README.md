@@ -28,24 +28,24 @@
 
 #### 技术栈
 
-| 名称       | 状态   | 描述                                                         | 地址                                                      |
-| ---------- | ------ | ------------------------------------------------------------ | --------------------------------------------------------- |
-| nacos      |        | 服务发现中心，配置中心                                       | https://nacos.io/                                         |
-| jwt        |        | 服务鉴权授权                                                 |                                                           |
-| redis      |        | csredis集成redis缓存中间件                                   |                                                           |
-| 分布式Id   |        | 雪花算法生成分布式id                                         |                                                           |
-| rabbitmq   |        | dotnet.cap集成rabbitmq消息队列，作用：限流，业务隔离通信机制（ 传统开发中，基础功能服务可能需要调用最上层的业务，在上层业务服务中，订阅上传文件事件） |                                                           |
-| mysql      |        | sqlsugar集成mysql，读写分离                                  | https://www.donet5.com/home/doc                           |
-| minio      |        | 分布式文件库                                                 | https://min.io/download?license=enterprise&platform=linux |
-| Serilog    |        | 日志工具，异常日志写入mysql数据库                            |                                                           |
-| AutoMapper |        | 实体数据映射关系                                             |                                                           |
-| Knife4UI   |        | 接口文档生成工具                                             |                                                           |
-| Polly      |        | 弹性和瞬态故障处理                                           |                                                           |
-| Ocelot     |        | 网关，路由转发                                               | https://github.com/softlgl/Ocelot.Provider.Nacos          |
-| Skywalking | 未完成 |                                                              |                                                           |
-| ES         |        | 分布式搜索                                                   | https://github.com/elastic/elasticsearch-net              |
-| ELK        |        | 日志收集                                                     | https://www.elastic.co/cn/                                |
-| httpclient |        | 服务之间通信，使用http请求                                   |  还存在bug                                                         |
-| XxlJob     | | 后续会根据java执行器迁移过来                                                             | https://github.com/xuyuadmin/xxljob                       |
+| 名称        |描述                                                         | 地址                                                      |
+| ---------- |------------------------------------------------------------  | --------------------------------------------------------- |
+| nacos      | 服务发现中心，配置中心                                       | https://nacos.io/                                         |
+| jwt        | 服务鉴权授权                                                 |                                                           |
+| redis      | csredis集成redis缓存中间件，读写分离                         |                                                           |
+| 分布式Id   | 雪花算法生成分布式id                                         |                                                           |
+| rabbitmq   | dotnet.cap集成rabbitmq消息队列，支持分布式事务，作用：限流，业务隔离通信机制（ 传统开发中，基础功能服务可能需要调用最上层的业务，在上层业务服务中，订阅上传文件事件） |                                                           |
+| mysql      | sqlsugar集成mysql，读写分离                                  | https://www.donet5.com/home/doc                           |
+| minio      | 分布式文件库                                                 | https://min.io/download?license=enterprise&platform=linux |
+| Serilog    | 日志工具，异常日志写入mysql数据库，logstash日志收集          |                                                           |
+| AutoMapper | 实体数据映射关系                                             |                                                           |
+| Knife4UI   | 接口文档生成工具                                             |                                                           |
+| Polly      | 弹性和瞬态故障处理                                           |                                                           |
+| Ocelot     | 网关，路由转发                                               | https://github.com/softlgl/Ocelot.Provider.Nacos          |
+| Skywalking | 分布式链路追踪                                               | https://github.com/SkyAPM/SkyAPM-dotnet                   |
+| ES         | 分布式搜索                                                   | https://github.com/elastic/elasticsearch-net              |
+| ELK        | 日志收集                                                     | https://www.elastic.co/cn/                                |
+| Refit      | 服务通信，使用http请求                                       | https://github.com/reactiveui/refit                       |
+| XxlJob     | 分布式定时任务作业调度                                 | https://github.com/xuyuadmin/xxljob                       |
 
 #### 其他

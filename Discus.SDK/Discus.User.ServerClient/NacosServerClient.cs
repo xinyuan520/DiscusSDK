@@ -1,22 +1,15 @@
-﻿using Discus.Shared.ServerClient;
-using Elastic.Clients.Elasticsearch;
-using System.Text.Json.Nodes;
+﻿using Refit;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Discus.User.ServerClient
 {
-    public class NacosServerClient : BasicServerClient
+    public interface NacosServerClient
     {
-        private const string _path = "/api/nacos";
-        private const string SERVICE_NAME = "discus-user-webapi";
-        private const string GROUP_NAME = "DEFAULT_GROUP";
-
-        public NacosServerClient() : base(_path,SERVICE_NAME, GROUP_NAME)
-        {
-        }
-
-        public async Task<JsonObject> GetServerAdressByNacos()
-        {
-            var result = await ServerInvoke.DoGetAsync<JsonObject>("/Get");
-            return result;
-        }
+        [Get("/api/nacos/get")]
+        Task<string> Get();
     }
 }
