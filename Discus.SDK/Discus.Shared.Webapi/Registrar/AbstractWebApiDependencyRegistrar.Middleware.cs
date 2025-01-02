@@ -29,7 +29,6 @@ namespace Discus.Shared.Webapi.Registrar
             var serviceInfo = App.ApplicationServices.GetService<IServiceInfo>();
             //var consulOptions = App.ApplicationServices.GetService<IOptions<ConsulConfig>>();
             var nacosOptions = App.ApplicationServices.GetService<IOptions<NacosConfig>>();
-#if DEBUG
             App.UseSwagger(c => c.RouteTemplate = $"/{serviceInfo.ServiceName}/swagger/{{documentName}}/swagger.json")
             .UseKnife4UI(c =>
             {
@@ -38,7 +37,6 @@ namespace Discus.Shared.Webapi.Registrar
                 c.DocExpansion(DocExpansion.None);
                 c.DefaultModelsExpandDepth(-1);//不显示Models
             });
-#endif
             App.UseHealthChecks($"/api/Health/Check", new HealthCheckOptions()
             {
                 Predicate = _ => true,

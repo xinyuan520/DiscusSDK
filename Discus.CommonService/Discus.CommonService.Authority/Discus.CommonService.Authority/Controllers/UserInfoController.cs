@@ -1,4 +1,5 @@
 ﻿using Discus.CommonService.Authority.Application.Contracts.Dtos;
+using Discus.Shared.WebApi.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
@@ -41,7 +42,7 @@ namespace Discus.CommonService.Authority.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         //[CustomerAuthorize]
-        [Route("GetById/{id}"), HttpGet]
+        [HttpGet("GetById/{id}"),CustomerAuthorize("")]
         public async Task<UserInfoDto> GetById(long id)
         {
             return await _userInfoService.GetById(id);

@@ -1,0 +1,259 @@
+2025-01-01 14:03:49.622 +08:00 [discus-user] [Information] SkyApm.InstrumentStartup : Initializing ...
+2025-01-01 14:03:49.623 +08:00 [discus-user] [Information] SkyApm.Service.RegisterService : Loaded instrument service [SkyApm.Service.RegisterService].
+2025-01-01 14:03:49.623 +08:00 [discus-user] [Information] SkyApm.Service.LogReportService : Loaded instrument service [SkyApm.Service.LogReportService].
+2025-01-01 14:03:49.623 +08:00 [discus-user] [Information] SkyApm.Service.PingService : Loaded instrument service [SkyApm.Service.PingService].
+2025-01-01 14:03:49.623 +08:00 [discus-user] [Information] SkyApm.Service.SegmentReportService : Loaded instrument service [SkyApm.Service.SegmentReportService].
+2025-01-01 14:03:49.623 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Loaded instrument service [SkyApm.Service.CLRStatsService].
+2025-01-01 14:03:49.623 +08:00 [discus-user] [Information] SkyApm.Sampling.SimpleCountSamplingInterceptor : Loaded instrument service [SkyApm.Sampling.SimpleCountSamplingInterceptor].
+2025-01-01 14:03:49.623 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.ConnectService : Loaded instrument service [SkyApm.Transport.Grpc.ConnectService].
+2025-01-01 14:03:49.643 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.ConnectionManager : Connected server[192.168.32.133:11800].
+2025-01-01 14:03:49.646 +08:00 [discus-user] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Microsoft.AspNetCore].
+2025-01-01 14:03:49.648 +08:00 [discus-user] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [HttpHandlerDiagnosticListener].
+2025-01-01 14:03:49.648 +08:00 [discus-user] [Information] SkyApm.InstrumentStartup : Started SkyAPM .NET Core Agent.
+2025-01-01 14:03:50.158 +08:00 [discus-user] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Grpc.Net.Client].
+2025-01-01 14:03:50.212 +08:00 [discus-user] [Information] SkyApm.Service.RegisterService : Reported Service Instance Properties[Service=discus-user,InstanceId=ab718133fa57435db9de520fe4eb2588@172.31.64.1].
+2025-01-01 14:03:52.809 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 421 trace segment. cost: 00:00:00.1832546s
+2025-01-01 14:03:55.776 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 374 trace segment. cost: 00:00:00.1456347s
+2025-01-01 14:03:58.854 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 636 trace segment. cost: 00:00:00.2295076s
+2025-01-01 14:04:01.910 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 733 trace segment. cost: 00:00:00.2806132s
+2025-01-01 14:04:04.876 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 634 trace segment. cost: 00:00:00.2497711s
+2025-01-01 14:04:07.875 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 618 trace segment. cost: 00:00:00.2440699s
+2025-01-01 14:04:10.922 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 656 trace segment. cost: 00:00:00.2984517s
+2025-01-01 14:04:13.882 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 648 trace segment. cost: 00:00:00.2574452s
+2025-01-01 14:04:16.895 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 665 trace segment. cost: 00:00:00.2651980s
+2025-01-01 14:04:19.661 +08:00 [discus-user] [Information] SkyApm.Service.PingService : Ping server @2025/1/1 6:04:19 +00:00
+2025-01-01 14:04:19.674 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 0 GenCollectCount 8 1 0 98M ThreadPool 32762 32767 1000 1000
+2025-01-01 14:04:19.909 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 684 trace segment. cost: 00:00:00.2841254s
+2025-01-01 14:04:22.892 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 666 trace segment. cost: 00:00:00.2624176s
+2025-01-01 14:04:25.912 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 677 trace segment. cost: 00:00:00.2715031s
+2025-01-01 14:04:28.943 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 673 trace segment. cost: 00:00:00.3088392s
+2025-01-01 14:04:31.895 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 673 trace segment. cost: 00:00:00.2692629s
+2025-01-01 14:04:34.876 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 689 trace segment. cost: 00:00:00.2498369s
+2025-01-01 14:04:37.913 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 642 trace segment. cost: 00:00:00.2829496s
+2025-01-01 14:04:40.863 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 649 trace segment. cost: 00:00:00.2374247s
+2025-01-01 14:04:43.867 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 651 trace segment. cost: 00:00:00.2381976s
+2025-01-01 14:04:46.865 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 657 trace segment. cost: 00:00:00.2376178s
+2025-01-01 14:04:49.644 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 106.25 GenCollectCount 9 0 0 50M ThreadPool 32763 32767 1000 1000
+2025-01-01 14:04:49.880 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 666 trace segment. cost: 00:00:00.2463350s
+2025-01-01 14:04:52.870 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 669 trace segment. cost: 00:00:00.2469501s
+2025-01-01 14:04:55.864 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 660 trace segment. cost: 00:00:00.2377551s
+2025-01-01 14:05:40.640 +08:00 [discus-user] [Information] SkyApm.InstrumentStartup : Initializing ...
+2025-01-01 14:05:40.640 +08:00 [discus-user] [Information] SkyApm.Service.RegisterService : Loaded instrument service [SkyApm.Service.RegisterService].
+2025-01-01 14:05:40.640 +08:00 [discus-user] [Information] SkyApm.Service.LogReportService : Loaded instrument service [SkyApm.Service.LogReportService].
+2025-01-01 14:05:40.640 +08:00 [discus-user] [Information] SkyApm.Service.PingService : Loaded instrument service [SkyApm.Service.PingService].
+2025-01-01 14:05:40.640 +08:00 [discus-user] [Information] SkyApm.Service.SegmentReportService : Loaded instrument service [SkyApm.Service.SegmentReportService].
+2025-01-01 14:05:40.640 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Loaded instrument service [SkyApm.Service.CLRStatsService].
+2025-01-01 14:05:40.640 +08:00 [discus-user] [Information] SkyApm.Sampling.SimpleCountSamplingInterceptor : Loaded instrument service [SkyApm.Sampling.SimpleCountSamplingInterceptor].
+2025-01-01 14:05:40.640 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.ConnectService : Loaded instrument service [SkyApm.Transport.Grpc.ConnectService].
+2025-01-01 14:05:40.662 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.ConnectionManager : Connected server[192.168.32.133:11800].
+2025-01-01 14:05:40.665 +08:00 [discus-user] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Microsoft.AspNetCore].
+2025-01-01 14:05:40.666 +08:00 [discus-user] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [HttpHandlerDiagnosticListener].
+2025-01-01 14:05:40.666 +08:00 [discus-user] [Information] SkyApm.InstrumentStartup : Started SkyAPM .NET Core Agent.
+2025-01-01 14:05:41.183 +08:00 [discus-user] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Grpc.Net.Client].
+2025-01-01 14:05:41.243 +08:00 [discus-user] [Information] SkyApm.Service.RegisterService : Reported Service Instance Properties[Service=discus-user,InstanceId=e0ba119329784ebb9555a1ad8b19df84@172.31.64.1].
+2025-01-01 14:05:43.783 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 400 trace segment. cost: 00:00:00.1350475s
+2025-01-01 14:05:46.868 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 594 trace segment. cost: 00:00:00.2271923s
+2025-01-01 14:05:49.885 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 651 trace segment. cost: 00:00:00.2439704s
+2025-01-01 14:05:52.881 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 620 trace segment. cost: 00:00:00.2296720s
+2025-01-01 15:15:10.534 +08:00 [discus-user] [Information] SkyApm.InstrumentStartup : Initializing ...
+2025-01-01 15:15:10.535 +08:00 [discus-user] [Information] SkyApm.Service.RegisterService : Loaded instrument service [SkyApm.Service.RegisterService].
+2025-01-01 15:15:10.535 +08:00 [discus-user] [Information] SkyApm.Service.LogReportService : Loaded instrument service [SkyApm.Service.LogReportService].
+2025-01-01 15:15:10.535 +08:00 [discus-user] [Information] SkyApm.Service.PingService : Loaded instrument service [SkyApm.Service.PingService].
+2025-01-01 15:15:10.535 +08:00 [discus-user] [Information] SkyApm.Service.SegmentReportService : Loaded instrument service [SkyApm.Service.SegmentReportService].
+2025-01-01 15:15:10.535 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Loaded instrument service [SkyApm.Service.CLRStatsService].
+2025-01-01 15:15:10.535 +08:00 [discus-user] [Information] SkyApm.Sampling.SimpleCountSamplingInterceptor : Loaded instrument service [SkyApm.Sampling.SimpleCountSamplingInterceptor].
+2025-01-01 15:15:10.535 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.ConnectService : Loaded instrument service [SkyApm.Transport.Grpc.ConnectService].
+2025-01-01 15:15:10.559 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.ConnectionManager : Connected server[192.168.32.133:11800].
+2025-01-01 15:15:10.562 +08:00 [discus-user] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Microsoft.AspNetCore].
+2025-01-01 15:15:10.563 +08:00 [discus-user] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [HttpHandlerDiagnosticListener].
+2025-01-01 15:15:10.563 +08:00 [discus-user] [Information] SkyApm.InstrumentStartup : Started SkyAPM .NET Core Agent.
+2025-01-01 15:15:11.076 +08:00 [discus-user] [Information] SkyApm.Diagnostics.TracingDiagnosticProcessorObserver : Loaded diagnostic listener [Grpc.Net.Client].
+2025-01-01 15:15:11.202 +08:00 [discus-user] [Information] SkyApm.Service.RegisterService : Reported Service Instance Properties[Service=discus-user,InstanceId=ad2bd1169c27471297427dcac3609463@172.31.64.1].
+2025-01-01 15:15:13.808 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 238 trace segment. cost: 00:00:00.2621157s
+2025-01-01 15:15:16.797 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 420 trace segment. cost: 00:00:00.2568045s
+2025-01-01 15:15:19.742 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 547 trace segment. cost: 00:00:00.2042737s
+2025-01-01 15:15:22.747 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 590 trace segment. cost: 00:00:00.2080353s
+2025-01-01 15:15:25.793 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 577 trace segment. cost: 00:00:00.2550587s
+2025-01-01 15:15:28.723 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 561 trace segment. cost: 00:00:00.1810006s
+2025-01-01 15:15:31.724 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 620 trace segment. cost: 00:00:00.1809651s
+2025-01-01 15:15:34.703 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 536 trace segment. cost: 00:00:00.1641763s
+2025-01-01 15:15:37.751 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 606 trace segment. cost: 00:00:00.2139467s
+2025-01-01 15:15:40.575 +08:00 [discus-user] [Information] SkyApm.Service.PingService : Ping server @2025/1/1 7:15:40 +00:00
+2025-01-01 15:15:40.589 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 0 GenCollectCount 7 6 0 105M ThreadPool 32762 32767 1000 1000
+2025-01-01 15:15:40.789 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 642 trace segment. cost: 00:00:00.2403757s
+2025-01-01 15:15:43.721 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 577 trace segment. cost: 00:00:00.1804303s
+2025-01-01 15:15:46.766 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 685 trace segment. cost: 00:00:00.2236110s
+2025-01-01 15:15:49.794 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 660 trace segment. cost: 00:00:00.2526072s
+2025-01-01 15:15:52.766 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 704 trace segment. cost: 00:00:00.2313715s
+2025-01-01 15:15:55.812 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 741 trace segment. cost: 00:00:00.2683240s
+2025-01-01 15:15:58.762 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 763 trace segment. cost: 00:00:00.2256651s
+2025-01-01 15:16:01.760 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 752 trace segment. cost: 00:00:00.2197880s
+2025-01-01 15:16:04.818 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 782 trace segment. cost: 00:00:00.2778422s
+2025-01-01 15:16:07.840 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 733 trace segment. cost: 00:00:00.2907180s
+2025-01-01 15:16:10.567 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 54.6875 GenCollectCount 9 9 0 283M ThreadPool 32763 32767 1000 1000
+2025-01-01 15:16:10.997 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 639 trace segment. cost: 00:00:00.4562223s
+2025-01-01 15:16:13.712 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 559 trace segment. cost: 00:00:00.1707747s
+2025-01-01 15:16:16.773 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 794 trace segment. cost: 00:00:00.2355101s
+2025-01-01 15:16:19.794 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 788 trace segment. cost: 00:00:00.2578267s
+2025-01-01 15:16:22.763 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 741 trace segment. cost: 00:00:00.2267314s
+2025-01-01 15:16:25.765 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 776 trace segment. cost: 00:00:00.2299048s
+2025-01-01 15:16:28.764 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 781 trace segment. cost: 00:00:00.2292267s
+2025-01-01 15:16:31.775 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 779 trace segment. cost: 00:00:00.2340029s
+2025-01-01 15:16:34.783 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 817 trace segment. cost: 00:00:00.2394121s
+2025-01-01 15:16:37.792 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 822 trace segment. cost: 00:00:00.2541710s
+2025-01-01 15:16:40.548 +08:00 [discus-user] [Information] SkyApm.Service.PingService : Ping server @2025/1/1 7:16:40 +00:00
+2025-01-01 15:16:40.548 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 64.0625 GenCollectCount 10 10 0 388M ThreadPool 32762 32767 1000 1000
+2025-01-01 15:16:40.786 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 787 trace segment. cost: 00:00:00.2432325s
+2025-01-01 15:16:43.782 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 794 trace segment. cost: 00:00:00.2370581s
+2025-01-01 15:16:46.779 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 805 trace segment. cost: 00:00:00.2381030s
+2025-01-01 15:16:49.774 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 799 trace segment. cost: 00:00:00.2321939s
+2025-01-01 15:16:52.768 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 791 trace segment. cost: 00:00:00.2302068s
+2025-01-01 15:16:55.766 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 772 trace segment. cost: 00:00:00.2281848s
+2025-01-01 15:16:58.773 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 760 trace segment. cost: 00:00:00.2261026s
+2025-01-01 15:17:01.772 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 765 trace segment. cost: 00:00:00.2360746s
+2025-01-01 15:17:04.783 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 812 trace segment. cost: 00:00:00.2379896s
+2025-01-01 15:17:07.771 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 797 trace segment. cost: 00:00:00.2366412s
+2025-01-01 15:17:10.542 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 81.25 GenCollectCount 11 11 0 169M ThreadPool 32763 32767 1000 1000
+2025-01-01 15:17:10.781 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 800 trace segment. cost: 00:00:00.2433509s
+2025-01-01 15:17:13.800 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 816 trace segment. cost: 00:00:00.2583216s
+2025-01-01 15:17:16.772 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 742 trace segment. cost: 00:00:00.2273006s
+2025-01-01 15:17:19.785 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 810 trace segment. cost: 00:00:00.2473233s
+2025-01-01 15:17:22.772 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 799 trace segment. cost: 00:00:00.2340186s
+2025-01-01 15:17:25.788 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 838 trace segment. cost: 00:00:00.2412895s
+2025-01-01 15:17:28.803 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 842 trace segment. cost: 00:00:00.2548164s
+2025-01-01 15:17:31.777 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 834 trace segment. cost: 00:00:00.2409016s
+2025-01-01 15:17:34.800 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 869 trace segment. cost: 00:00:00.2555454s
+2025-01-01 15:17:37.783 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 839 trace segment. cost: 00:00:00.2451257s
+2025-01-01 15:17:40.543 +08:00 [discus-user] [Information] SkyApm.Service.PingService : Ping server @2025/1/1 7:17:40 +00:00
+2025-01-01 15:17:40.543 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 68.75 GenCollectCount 11 11 0 101M ThreadPool 32762 32767 1000 1000
+2025-01-01 15:17:40.787 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 750 trace segment. cost: 00:00:00.2498404s
+2025-01-01 15:17:43.745 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 677 trace segment. cost: 00:00:00.1979283s
+2025-01-01 15:17:46.780 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 793 trace segment. cost: 00:00:00.2370114s
+2025-01-01 15:17:49.783 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 797 trace segment. cost: 00:00:00.2474395s
+2025-01-01 15:17:52.773 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 710 trace segment. cost: 00:00:00.2336955s
+2025-01-01 15:17:55.817 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 801 trace segment. cost: 00:00:00.2786343s
+2025-01-01 15:17:58.777 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 809 trace segment. cost: 00:00:00.2347357s
+2025-01-01 15:18:01.763 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 742 trace segment. cost: 00:00:00.2260552s
+2025-01-01 15:18:04.750 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 718 trace segment. cost: 00:00:00.2148951s
+2025-01-01 15:18:07.780 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 744 trace segment. cost: 00:00:00.2429648s
+2025-01-01 15:18:10.539 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 64.0625 GenCollectCount 10 10 0 146M ThreadPool 32761 32767 1000 1000
+2025-01-01 15:18:10.779 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 804 trace segment. cost: 00:00:00.2431806s
+2025-01-01 15:18:13.778 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 809 trace segment. cost: 00:00:00.2386401s
+2025-01-01 15:18:16.773 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 791 trace segment. cost: 00:00:00.2331498s
+2025-01-01 15:18:19.778 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 827 trace segment. cost: 00:00:00.2401233s
+2025-01-01 15:18:22.815 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 779 trace segment. cost: 00:00:00.2772262s
+2025-01-01 15:18:25.781 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 775 trace segment. cost: 00:00:00.2376500s
+2025-01-01 15:18:28.779 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 785 trace segment. cost: 00:00:00.2362377s
+2025-01-01 15:18:31.793 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 782 trace segment. cost: 00:00:00.2553114s
+2025-01-01 15:18:34.796 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 843 trace segment. cost: 00:00:00.2521168s
+2025-01-01 15:18:37.790 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 850 trace segment. cost: 00:00:00.2480786s
+2025-01-01 15:18:40.547 +08:00 [discus-user] [Information] SkyApm.Service.PingService : Ping server @2025/1/1 7:18:40 +00:00
+2025-01-01 15:18:40.547 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 81.25 GenCollectCount 11 11 0 27M ThreadPool 32761 32767 1000 1000
+2025-01-01 15:18:40.788 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 816 trace segment. cost: 00:00:00.2463073s
+2025-01-01 15:18:43.795 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 838 trace segment. cost: 00:00:00.2461827s
+2025-01-01 15:18:46.774 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 824 trace segment. cost: 00:00:00.2375044s
+2025-01-01 15:18:49.787 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 851 trace segment. cost: 00:00:00.2510769s
+2025-01-01 15:18:52.775 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 780 trace segment. cost: 00:00:00.2311135s
+2025-01-01 15:18:55.786 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 823 trace segment. cost: 00:00:00.2451685s
+2025-01-01 15:18:58.780 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 805 trace segment. cost: 00:00:00.2426891s
+2025-01-01 15:19:01.775 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 804 trace segment. cost: 00:00:00.2368025s
+2025-01-01 15:19:04.782 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 837 trace segment. cost: 00:00:00.2413036s
+2025-01-01 15:19:07.793 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 816 trace segment. cost: 00:00:00.2560840s
+2025-01-01 15:19:10.547 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 75 GenCollectCount 10 10 0 368M ThreadPool 32763 32767 1000 1000
+2025-01-01 15:19:10.770 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 736 trace segment. cost: 00:00:00.2256960s
+2025-01-01 15:19:13.766 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 771 trace segment. cost: 00:00:00.2294364s
+2025-01-01 15:19:16.788 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 804 trace segment. cost: 00:00:00.2376112s
+2025-01-01 15:19:19.778 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 807 trace segment. cost: 00:00:00.2393735s
+2025-01-01 15:19:22.782 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 799 trace segment. cost: 00:00:00.2400476s
+2025-01-01 15:19:25.764 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 760 trace segment. cost: 00:00:00.2205971s
+2025-01-01 15:19:28.781 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 815 trace segment. cost: 00:00:00.2417239s
+2025-01-01 15:19:31.776 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 729 trace segment. cost: 00:00:00.2331995s
+2025-01-01 15:19:34.774 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 783 trace segment. cost: 00:00:00.2312511s
+2025-01-01 15:19:37.754 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 753 trace segment. cost: 00:00:00.2196874s
+2025-01-01 15:19:40.540 +08:00 [discus-user] [Information] SkyApm.Service.PingService : Ping server @2025/1/1 7:19:40 +00:00
+2025-01-01 15:19:40.541 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 51.5625 GenCollectCount 11 11 0 93M ThreadPool 32762 32767 1000 1000
+2025-01-01 15:19:40.775 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 779 trace segment. cost: 00:00:00.2397681s
+2025-01-01 15:19:43.781 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 806 trace segment. cost: 00:00:00.2374494s
+2025-01-01 15:19:46.786 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 815 trace segment. cost: 00:00:00.2492885s
+2025-01-01 15:19:49.777 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 812 trace segment. cost: 00:00:00.2389534s
+2025-01-01 15:19:52.772 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 806 trace segment. cost: 00:00:00.2321201s
+2025-01-01 15:19:55.788 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 822 trace segment. cost: 00:00:00.2418334s
+2025-01-01 15:19:58.775 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 798 trace segment. cost: 00:00:00.2359183s
+2025-01-01 15:20:01.775 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 797 trace segment. cost: 00:00:00.2340278s
+2025-01-01 15:20:04.802 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 805 trace segment. cost: 00:00:00.2591801s
+2025-01-01 15:20:07.761 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 765 trace segment. cost: 00:00:00.2243051s
+2025-01-01 15:20:10.547 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 50 GenCollectCount 10 10 0 373M ThreadPool 32763 32767 1000 1000
+2025-01-01 15:20:10.785 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 771 trace segment. cost: 00:00:00.2421381s
+2025-01-01 15:20:13.820 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 789 trace segment. cost: 00:00:00.2725750s
+2025-01-01 15:20:16.770 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 748 trace segment. cost: 00:00:00.2273811s
+2025-01-01 15:20:19.775 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 775 trace segment. cost: 00:00:00.2371322s
+2025-01-01 15:20:22.786 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 790 trace segment. cost: 00:00:00.2460976s
+2025-01-01 15:20:25.775 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 799 trace segment. cost: 00:00:00.2372757s
+2025-01-01 15:20:28.778 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 821 trace segment. cost: 00:00:00.2425108s
+2025-01-01 15:20:31.792 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 808 trace segment. cost: 00:00:00.2453766s
+2025-01-01 15:20:34.791 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 826 trace segment. cost: 00:00:00.2474399s
+2025-01-01 15:20:37.790 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 798 trace segment. cost: 00:00:00.2513756s
+2025-01-01 15:20:40.547 +08:00 [discus-user] [Information] SkyApm.Service.PingService : Ping server @2025/1/1 7:20:40 +00:00
+2025-01-01 15:20:40.547 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 78.125 GenCollectCount 11 11 0 173M ThreadPool 32762 32767 1000 1000
+2025-01-01 15:20:40.778 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 753 trace segment. cost: 00:00:00.2357102s
+2025-01-01 15:20:43.769 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 768 trace segment. cost: 00:00:00.2283683s
+2025-01-01 15:20:46.792 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 798 trace segment. cost: 00:00:00.2523995s
+2025-01-01 15:20:49.775 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 813 trace segment. cost: 00:00:00.2401911s
+2025-01-01 15:20:52.778 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 806 trace segment. cost: 00:00:00.2428556s
+2025-01-01 15:20:55.790 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 798 trace segment. cost: 00:00:00.2428514s
+2025-01-01 15:20:58.792 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 813 trace segment. cost: 00:00:00.2445045s
+2025-01-01 15:21:01.793 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 809 trace segment. cost: 00:00:00.2450360s
+2025-01-01 15:21:04.788 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 829 trace segment. cost: 00:00:00.2418454s
+2025-01-01 15:21:07.778 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 816 trace segment. cost: 00:00:00.2415132s
+2025-01-01 15:21:10.553 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 60.9375 GenCollectCount 11 11 0 55M ThreadPool 32762 32767 1000 1000
+2025-01-01 15:21:10.798 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 827 trace segment. cost: 00:00:00.2487792s
+2025-01-01 15:21:13.787 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 808 trace segment. cost: 00:00:00.2401240s
+2025-01-01 15:21:16.774 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 796 trace segment. cost: 00:00:00.2378897s
+2025-01-01 15:21:19.829 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 803 trace segment. cost: 00:00:00.2825441s
+2025-01-01 15:21:22.779 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 762 trace segment. cost: 00:00:00.2410023s
+2025-01-01 15:21:25.773 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 747 trace segment. cost: 00:00:00.2247791s
+2025-01-01 15:21:28.763 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 747 trace segment. cost: 00:00:00.2215611s
+2025-01-01 15:21:31.771 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 779 trace segment. cost: 00:00:00.2305184s
+2025-01-01 15:21:34.777 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 785 trace segment. cost: 00:00:00.2360875s
+2025-01-01 15:21:37.791 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 746 trace segment. cost: 00:00:00.2545737s
+2025-01-01 15:21:40.545 +08:00 [discus-user] [Information] SkyApm.Service.PingService : Ping server @2025/1/1 7:21:40 +00:00
+2025-01-01 15:21:40.545 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 51.5625 GenCollectCount 10 10 0 210M ThreadPool 32762 32767 1000 1000
+2025-01-01 15:21:40.775 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 777 trace segment. cost: 00:00:00.2356330s
+2025-01-01 15:21:43.791 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 806 trace segment. cost: 00:00:00.2447697s
+2025-01-01 15:21:46.755 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 727 trace segment. cost: 00:00:00.2200227s
+2025-01-01 15:21:49.769 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 768 trace segment. cost: 00:00:00.2241915s
+2025-01-01 15:21:52.811 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 784 trace segment. cost: 00:00:00.2669817s
+2025-01-01 15:21:55.767 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 769 trace segment. cost: 00:00:00.2293498s
+2025-01-01 15:21:58.782 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 808 trace segment. cost: 00:00:00.2429143s
+2025-01-01 15:22:01.781 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 783 trace segment. cost: 00:00:00.2421282s
+2025-01-01 15:22:04.772 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 802 trace segment. cost: 00:00:00.2357241s
+2025-01-01 15:22:07.778 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 808 trace segment. cost: 00:00:00.2372365s
+2025-01-01 15:22:10.546 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 70.3125 GenCollectCount 10 10 0 414M ThreadPool 32763 32767 1000 1000
+2025-01-01 15:22:10.791 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 818 trace segment. cost: 00:00:00.2490326s
+2025-01-01 15:22:13.789 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 792 trace segment. cost: 00:00:00.2391531s
+2025-01-01 15:22:16.794 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 799 trace segment. cost: 00:00:00.2485854s
+2025-01-01 15:22:19.780 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 812 trace segment. cost: 00:00:00.2397580s
+2025-01-01 15:22:22.768 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 786 trace segment. cost: 00:00:00.2320095s
+2025-01-01 15:22:25.774 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 798 trace segment. cost: 00:00:00.2352566s
+2025-01-01 15:22:28.807 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 804 trace segment. cost: 00:00:00.2678459s
+2025-01-01 15:22:31.771 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 762 trace segment. cost: 00:00:00.2319585s
+2025-01-01 15:22:34.766 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 748 trace segment. cost: 00:00:00.2285811s
+2025-01-01 15:22:37.793 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 809 trace segment. cost: 00:00:00.2409421s
+2025-01-01 15:22:40.553 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 65.625 GenCollectCount 11 11 0 211M ThreadPool 32762 32767 1000 1000
+2025-01-01 15:22:40.553 +08:00 [discus-user] [Information] SkyApm.Service.PingService : Ping server @2025/1/1 7:22:40 +00:00
+2025-01-01 15:22:40.793 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 802 trace segment. cost: 00:00:00.2449022s
+2025-01-01 15:22:43.778 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 725 trace segment. cost: 00:00:00.2350424s
+2025-01-01 15:22:46.772 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 772 trace segment. cost: 00:00:00.2320805s
+2025-01-01 15:22:49.836 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 812 trace segment. cost: 00:00:00.2988596s
+2025-01-01 15:22:52.767 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 716 trace segment. cost: 00:00:00.2180856s
+2025-01-01 15:22:55.765 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 749 trace segment. cost: 00:00:00.2238049s
+2025-01-01 15:22:58.777 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 740 trace segment. cost: 00:00:00.2254953s
+2025-01-01 15:23:01.772 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 765 trace segment. cost: 00:00:00.2326158s
+2025-01-01 15:23:04.771 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 769 trace segment. cost: 00:00:00.2257445s
+2025-01-01 15:23:07.808 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 823 trace segment. cost: 00:00:00.2659204s
+2025-01-01 15:23:10.538 +08:00 [discus-user] [Information] SkyApm.Service.CLRStatsService : Report CLR Stats. CPU UsagePercent 60.9375 GenCollectCount 10 10 0 244M ThreadPool 32763 32767 1000 1000
+2025-01-01 15:23:10.741 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 674 trace segment. cost: 00:00:00.2061632s
+2025-01-01 15:23:13.780 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 796 trace segment. cost: 00:00:00.2423502s
+2025-01-01 15:23:16.783 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 806 trace segment. cost: 00:00:00.2490911s
+2025-01-01 15:23:19.783 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 830 trace segment. cost: 00:00:00.2459579s
+2025-01-01 15:23:22.772 +08:00 [discus-user] [Information] SkyApm.Transport.Grpc.V8.SegmentReporter : Report 742 trace segment. cost: 00:00:00.2336300s

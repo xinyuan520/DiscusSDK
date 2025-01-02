@@ -1,0 +1,106 @@
+public class OrderSaga
+{
+    private readonly ICapPublisher _capPublisher;
+
+    public OrderSaga(ICapPublisher capPublisher)
+    {
+        _capPublisher = capPublisher;
+    }
+
+    // 事件处理方法
+    [CapSubscribe("order.created")]
+    public async Task HandleOrderCreated(Order order)
+    {
+        try
+        {
+            // 处理事件 A：例如创建订单
+            await ProcessOrderCreationAsync(order);
+            // 发布事件 A 成功
+            await _capPublisher.PublishAsync("order.created.success", order);
+
+            // 处理事件 B：例如处理支付
+            await ProcessPaymentAsync(order);
+            // 发布事件 B 成功
+            await _capPublisher.PublishAsync("order.payment.success", order);
+
+            // 处理事件 C：例如发货
+            await ShipOrderAsync(order);
+            // 发布事件 C 成功
+            await _capPublisher.PublishAsync("order.shipped.success", order);
+
+            // 处理事件 D：例如发送通知
+            await SendOrderNotificationAsync(order);
+            // 发布事件 D 成功
+            await _capPublisher.PublishAsync("order.notification.success", order);
+        }
+        catch (Exception ex)
+        {
+            // 捕获异常并进行补偿
+            await HandleCompensationAsync(order, ex);
+        }
+    }
+
+    // 事件 A - 创建订单
+    private async Task ProcessOrderCreationAsync(Order order)
+    {
+        // 订单创建业务逻辑
+        // 如果出错，可以抛出异常，进入 catch 块
+    }
+
+    // 事件 B - 支付处理
+    private async Task ProcessPaymentAsync(Order order)
+    {
+        // 支付处理业务逻辑
+    }
+
+    // 事件 C - 发货
+    private async Task ShipOrderAsync(Order order)
+    {
+        // 发货处理业务逻辑
+    }
+
+    // 事件 D - 发送通知
+    private async Task SendOrderNotificationAsync(Order order)
+    {
+        // 发送通知逻辑
+    }
+
+    // 补偿操作
+    private async Task HandleCompensationAsync(Order order, Exception ex)
+    {
+        // 处理补偿逻辑（回滚操作）
+
+        // 如果事件 C 成功，事件 D 失败，回滚事件 C
+        await RollbackShippingAsync(order);
+
+        // 如果事件 B 成功，事件 C 和 D 失败，回滚事件 B
+        await RollbackPaymentAsync(order);
+
+        // 如果事件 A 成功，事件 B、C、D 失败，回滚事件 A
+        await RollbackOrderCreationAsync(order);
+
+        // 记录失败的错误
+        Console.WriteLine($"Transaction failed: {ex.Message}");
+    }
+
+    // 事件 A 补偿操作：回滚订单创建
+    private async Task RollbackOrderCreationAsync(Order order)
+    {
+        // 执行补偿操作，回滚订单创建（如删除订单）
+        await _capPublisher.PublishAsync("order.creation.rollback", order);
+    }
+
+    // 事件 B 补偿操作：回滚支付
+    private async Task RollbackPaymentAsync(Order order)
+    {
+        // 执行补偿操作，回滚支付（如退还支付）
+        await _capPublisher.PublishAsync("order.payment.rollback", order);
+    }
+
+    // 事件 C 补偿操作：回滚发货
+    private async Task RollbackShippingAsync(Order order)
+    {
+        // 执行补偿操作，回滚发货（如撤销发货）
+        await _capPublisher.PublishAsync("order.shipping.rollback", order);
+    }
+}

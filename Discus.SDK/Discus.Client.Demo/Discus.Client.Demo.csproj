@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Refit" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Discus.Shared.Application\Discus.Shared.Application.csproj" />
+    <ProjectReference Include="..\Discus.Shared.Webapi\Discus.Shared.WebApi.csproj" />
+    <ProjectReference Include="..\Discus.User.Application.Contracts\Discus.User.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Discus.User.ServerClient\Discus.User.ServerClient.csproj" />
+  </ItemGroup>
+
+</Project>
